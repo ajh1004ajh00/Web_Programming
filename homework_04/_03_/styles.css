@@ -1,0 +1,60 @@
+/* 전체 레이아웃 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* 제목 스타일 */
+h1 {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-bottom: 2px solid #2980b9;
+    margin-bottom: 40px;
+}
+
+/* 리스트 스타일 */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* 리스트 항목 스타일 */
+li {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* 이미지 스타일 */
+img.logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 설명 텍스트 스타일 */
+p {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+/* 링크 스타일 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 링크 클릭 시 텍스트 컬러 변경 */
+a:visited {
+    color: #7f8c8d;
+}
