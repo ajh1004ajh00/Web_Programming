@@ -1,0 +1,27 @@
+/* ul 태그에서 list-style 제거 및 가로 정렬 */
+ul {
+    list-style: none; /* 목록 점 제거 */
+    padding: 0;
+    display: flex; /* 가로로 정렬 */
+}
+
+/* li 태그 사이에 간격 추가 */
+li {
+    margin-right: 10px; /* 오른쪽 간격 */
+}
+
+/* 이미지 크기 설정 */
+img {
+    width: 100px;
+    height: 100px;
+}
+
+/* 제목 스타일링 */
+h1 {
+    font-size: 24px;
+}
+
+/* 아래첨자 크기 조절 */
+sub {
+    font-size: 12px; /* 아래첨자의 크기 */
+}
