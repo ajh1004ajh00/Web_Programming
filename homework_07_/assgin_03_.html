@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2019136078_CH04_Additional_3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header .search-box {
+            margin-top: 10px;
+        }
+        header input[type="text"] {
+            padding: 5px;
+            width: 200px;
+        }
+        article {
+            margin: 20px;
+        }
+        section {
+            margin: 20px;
+        }
+        section h3 {
+            margin-bottom: 10px;
+        }
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        section li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+        }
+        .comment-section input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .comment-section button {
+            padding: 10px 20px;
+            background-color: lightgray;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header 영역 -->
+    <header>
+        <h1>블로그</h1>
+        <div class="search-box">
+            <input type="text" placeholder="검색">
+        </div>
+    </header>
+
+    <!-- 본문 영역 -->
+    <article>
+        <h2>게시물 제목</h2>
+        <p>이곳은 게시물의 본문 내용이 들어가는 곳입니다. 다양한 주제로 작성된 블로그 게시물을 읽어보세요.</p>
+    </article>
+
+    <!-- 댓글 목록 및 작성 영역 -->
+    <section>
+        <h3>댓글</h3>
+        <ul>
+            <li>댓글 1: 이 게시물은 유익하네요!</li>
+            <li>댓글 2: 좋은 정보 감사합니다.</li>
+        </ul>
+
+        <div class="comment-section">
+            <h3>댓글을 입력하세요</h3>
+            <input type="text" placeholder="댓글을 입력하세요">
+            <button type="submit">등록</button>
+        </div>
+    </section>
+
+</body>
+</html>

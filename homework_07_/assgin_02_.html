@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2019136078_CH04_Additional_2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .buttons {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>프로그램 이용 만족도 설문조사</h1>
+        <p>우리 기관에서는 프로그램에 참여해주신 여러분들을 대상으로 이용 만족도에 대한 설문조사를 진행하고 있습니다.</p>
+        <p>설문조사 기간: 2022년 10월 11일 ~ 2022년 10월 26일</p>
+    </header>
+
+    <form>
+        <ol>
+            <!-- 문항 1 -->
+            <li class="question">
+                <label>귀하께서는 최근 1년 간 비슷한 프로그램에 참여하신 적이 있습니까?</label>
+                <input type="radio" name="q1" value="예"> 예<br>
+                <input type="radio" name="q1" value="아니오"> 아니오
+            </li>
+
+            <!-- 문항 2 -->
+            <li class="question">
+                <label>귀하께서는 해당 프로그램에 대해 전반적으로 만족하십니까?</label>
+                <input type="radio" name="q2" value="매우 그렇다"> 매우 그렇다<br>
+                <input type="radio" name="q2" value="그렇다"> 그렇다<br>
+                <input type="radio" name="q2" value="보통이다"> 보통이다<br>
+                <input type="radio" name="q2" value="그렇지 않다"> 그렇지 않다<br>
+                <input type="radio" name="q2" value="전혀 그렇지 않다"> 전혀 그렇지 않다
+            </li>
+
+            <!-- 문항 3 -->
+            <li class="question">
+                <label>귀하께서는 해당 프로그램을 주변 사람들에게 추천하실 의향이 있으십니까?</label>
+                <input type="radio" name="q3" value="매우 그렇다"> 매우 그렇다<br>
+                <input type="radio" name="q3" value="그렇다"> 그렇다<br>
+                <input type="radio" name="q3" value="보통이다"> 보통이다<br>
+                <input type="radio" name="q3" value="그렇지 않다"> 그렇지 않다
+            </li>
+
+            <!-- 문항 4 -->
+            <li class="question">
+                <label>해당 프로그램을 참가한 주된 사유(목적)는 무엇입니까? (중복 선택 가능)</label>
+                <input type="checkbox" name="q4" value="취업 준비"> 취업 준비<br>
+                <input type="checkbox" name="q4" value="개인적인 흥미"> 개인적인 흥미<br>
+                <input type="checkbox" name="q4" value="학업 또는 자격증 취득"> 학업 또는 자격증 취득<br>
+                <input type="checkbox" name="q4" value="기타"> 기타
+            </li>
+
+            <!-- 문항 5 -->
+            <li class="question">
+                <label>해당 프로그램을 이용하면서 불편사항이나 개선점이 있다면 기재하여 주시기 바랍니다.</label>
+                <textarea name="q5" rows="4" cols="50">내용을 입력해주세요</textarea>
+            </li>
+
+            <!-- 문항 6 -->
+            <li class="question">
+                <label>[설문분석을 위한 기본 문항] 성별</label>
+                <input type="radio" name="q6" value="남"> 남<br>
+                <input type="radio" name="q6" value="여"> 여
+            </li>
+
+            <!-- 문항 7 -->
+            <li class="question">
+                <label>[설문분석을 위한 기본 문항] 연령대</label>
+                <input type="radio" name="q7" value="10대"> 10대<br>
+                <input type="radio" name="q7" value="20대"> 20대<br>
+                <input type="radio" name="q7" value="30대"> 30대<br>
+                <input type="radio" name="q7" value="40대"> 40대<br>
+                <input type="radio" name="q7" value="50대 이상"> 50대 이상
+            </li>
+        </ol>
+
+        <!-- 초기화 및 제출 버튼 -->
+        <div class="buttons">
+            <button type="reset">초기화</button>
+            <button type="submit">제출</button>
+        </div>
+    </form>
+
+</body>
+</html>
