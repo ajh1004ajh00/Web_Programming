@@ -1,0 +1,27 @@
+<form action="#" method="post">
+    <fieldset>
+        <legend>시작 그룹</legend>
+        <input type="radio" id="newTab" name="startGroup" value="newTab" checked />
+        <label for="newTab">새 탭 페이지 열기</label><br />
+
+        <input type="radio" id="resume" name="startGroup" value="resume" />
+        <label for="resume">중단한 위치에서 계속하기</label><br />
+
+        <input type="radio" id="openPages" name="startGroup" value="openPages" />
+        <label for="openPages">특정 페이지 또는 페이지 모음 열기</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>개인정보 및 보안</legend>
+        <input type="checkbox" id="sync" name="privacy" value="sync" checked />
+        <label for="sync">동기화 및 서비스</label><br />
+
+        <input type="checkbox" id="login" name="privacy" value="login" checked />
+        <label for="login">로그인 허용</label><br />
+
+        <input type="checkbox" id="preload" name="privacy" value="preload" />
+        <label for="preload">페이지 미리 로드</label>
+    </fieldset>
+
+    <input type="submit" value="제출" />
+</form>
