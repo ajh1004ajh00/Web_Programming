@@ -1,0 +1,48 @@
+/* 전체 헤더 스타일 */
+header {
+    border-bottom: 1px solid #000; /* 헤더 하단에 1px 실선 */
+    padding: 10px;
+}
+
+/* 상단 고객 메뉴 - 인라인 정렬 */
+.top-menu {
+    display: flex;
+    justify-content: flex-end; /* 인라인으로 오른쪽 정렬 */
+    gap: 15px; /* 메뉴 항목 간 간격 */
+}
+
+/* 메인 로고 중앙 정렬 */
+.logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo img {
+    width: 150px; /* 로고 크기는 필요에 따라 수정 가능 */
+}
+
+/* 검색 공간 스타일 */
+.search-box {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.search-box input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* 메인 메뉴 스타일 */
+.main-menu {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    gap: 20px; /* 메뉴 항목 간의 균일한 간격 */
+    margin: 10px 0;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}

@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.top-menu {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.top-menu a {
+    margin-left: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.search-box {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.search-box input {
+    padding: 5px;
+    width: 200px;
+}
+
+.main-menu {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.main-menu a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.signup-form {
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+}
+
+.signup-form label {
+    display: inline-block;
+    width: 100px;
+}
