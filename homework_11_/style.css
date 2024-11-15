@@ -1,0 +1,21 @@
+/* 1. 컨테이너 너비 1080px */
+.container {
+    width: 1080px;
+    margin: 0 auto; /* 2. 중앙 정렬 */
+    margin-bottom: 8px; /* 3. 아래쪽 margin 8px */
+    display: flex; /* Flexbox를 이용한 좌우 배치 */
+}
+
+/* 4. .left 요소 스타일 */
+.left {
+    width: 740px; /* 5. 너비 740px */
+    height: 428px; /* 높이 428px */
+    background-color: red; /* 색상은 빨간색 */
+}
+
+/* 6. .right 요소 스타일 */
+.right {
+    width: 332px; /* 7. 너비 332px */
+    height: 428px; /* 높이 428px */
+    background-color: blue; /* 색상은 파란색 */
+}
