@@ -12,7 +12,7 @@ const WeeklyForecast = ({ weeklyWeather }) => {
         {weeklyWeather.map((day, index) => (
           <div
             key={index}
-            className="bg-gray-100 p-4 rounded-lg shadow-md text-center"
+            className="bg-blue-200 p-4 rounded-lg shadow-md text-center"
           >
             <p className="text-lg font-semibold text-gray-700">
               {new Date(day.date).toLocaleDateString("ko-KR", {
@@ -26,7 +26,7 @@ const WeeklyForecast = ({ weeklyWeather }) => {
               {Math.round(day.maxTemp - 273.15)}°C / {Math.round(day.minTemp - 273.15)}°C
             </p>
             <p className="text-sm capitalize text-gray-500 mt-2">
-              {day.weather?.description || "No data"}
+              {day.weather?.main || "No data"}
             </p>
             <img
               src={`http://openweathermap.org/img/wn/${day.weather?.icon}@2x.png`}
