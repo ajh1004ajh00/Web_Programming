@@ -1,33 +1,40 @@
-import React from 'react';
-//import chan from '../css/weather.module.css';
+import React from "react";
 
+const BackgroundVideo = ({ currentWeather }) => {
+  // currentWeather 객체에서 상태 확인
+  const getVideoSource = (weatherData) => {
+    if (!weatherData?.weather?.[0]?.main) return null;
 
-const BackgroundVideo = ({ condition }) => {
-  const getVideoSource = (condition) => {
-    switch (condition) {
-      case 'Rain':
-        return '/assets/videos/rain.mp4';
-      case 'Clear':
-        return '/assets/videos/rain.mp4';
-      case 'Snow':
-        return '/assets/videos/rain.mp4';
+    switch (weatherData.weather[0].main) {
+      case "Rain":
+        return "/assets/videos/rain.mp4";
+      case "Clear":
+        return "/assets/videos/rain.mp4";
+      case "Snow":
+        return "/assets/videos/rain.mp4";
+      case "Clouds":
+        return "/assets/videos/rain.mp4";
       default:
-        return '/assets/videos/rain.mp4';
+        return "/assets/videos/rain.mp4";
     }
   };
 
-  const videoSource = getVideoSource(condition);
+  const videoSource = getVideoSource(currentWeather);
+
+  // 비디오가 없을 경우 아무것도 렌더링하지 않음
+  if (!videoSource) return null;
 
   return (
-    <video
-      style={{ width: "50rem", height: "25rem" }}
-      className="absolute top-4 left-4 object-cover z-10 rounded-lg shadow-md"
-      autoPlay
-      loop
-      muted
-    >
-      <source src={getVideoSource(condition)} type="video/mp4" />
-    </video>
+    <div className="relative w-full aspect-w-16 aspect-h-16 overflow-hidden rounded-lg shadow-lg">
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+      >
+        <source src={videoSource} type="video/mp4" />
+      </video>
+    </div>
   );
 };
 
