@@ -1,0 +1,226 @@
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5f7fb, #dce5ff); /* 부드러운 그라데이션 배경 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 챗봇 컨테이너 */
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* 상단 설명 */
+.chatbot-header {
+  position: relative;
+  top: 0px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 18px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* 캐릭터 이미지 */
+.character-container {
+  display: block;
+  position: relative;
+  /* top: 80px;  */
+  /* 헤더와의 간격 조정 */
+  width: 50%;
+  height: 50%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.character-image {
+  margin-top: 25px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 대화창 */
+.dialogue-box {
+  margin-top: 15px;
+  position: relative;
+  /* bottom: 80px;  */
+  /* 채팅창 위치 조정 */
+  width: 90%;
+  max-width: 700px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dialogue-messages {
+  flex: 1;
+  overflow-y: auto;
+  height: 250px; /* 대화 기록창 높이를 줄임 */
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column; /* 대화 내용이 위에서 아래로 흐르도록 */
+  /*gap: 12px; /* 각 메시지 간의 간격을 줍니다 */
+  align-items: flex-start; /* 모든 메시지를 왼쪽으로 정렬 */
+}
+
+/* 공통 메시지 스타일 */
+.message {
+  /*margin-bottom: 12px;*/
+  padding: 12px 18px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 75%; /* 메시지 폭을 줄여서 더 적당한 크기 */
+  word-wrap: break-word;
+}
+
+.message + .message{
+  margin-top: 10px;
+}
+
+/* 사용자 메시지 오른쪽 정렬 */
+.message.user {
+  background-color: #d1e7fe; /* 사용자 메시지 색상 */
+  color: #01579b;
+  align-self: flex-end; /* 사용자 메시지를 오른쪽으로 배치 */
+  border-radius: 20px 20px 0 20px; /* 사용자 메시지 구석 둥글게 */
+  transform: translateX(-10px);
+}
+
+/* 봇 메시지 왼쪽 정렬 */
+.message.bot {
+  background-color: #e8f5e9; /* 봇 메시지 색상 */
+  color: #1b5e20;
+  align-self: flex-start; /* 봇 메시지를 왼쪽으로 배치 */
+  border-radius: 20px 20px 20px 0; /* 봇 메시지 구석 둥글게 */
+  transform: translateX(10px);
+}
+
+/* 입력창 */
+.dialogue-input {
+  display: flex;
+  gap: 15px;
+  /*padding-top: 10px;*/
+}
+
+.dialogue-text-input {
+  flex: 1;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  color: #333;
+  background: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dialogue-text-input:focus {
+  border-color: #80deea;
+  box-shadow: 0 0 10px rgba(128, 222, 234, 0.5);
+}
+
+.dialogue-send-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background: #01579b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dialogue-send-button:hover {
+  background: #003c7d;
+  transform: scale(1.05);
+}
+
+.dialogue-send-button:active {
+  transform: scale(1);
+}
+
+
+@media (max-width: 768px) {
+  .chatbot-header {
+     display: none; 
+    /*visibility: hidden; /* 모바일에서는 헤더를 숨깁니다 */
+    font-size: 1.1rem; /* 모바일 화면에서 폰트 크기 감소 */
+    padding: 12px 18px;
+    width: 100%; /* 헤더가 화면에 꽉 차게 */
+    top: 20px; /* 모바일에서는 상단 여백을 더 많이 줍니다 */
+    
+  }
+
+  .character-container {
+    top: -30px; /* 모바일에서 캐릭터 위치 상단으로 조정 */
+    width: 100%; /* 가로를 화면에 맞게 조정 */
+    height: 50%; 
+    /* 높이도 화면에 맞게 늘림 */
+  }
+
+  .character-image {
+    object-fit: contain; /* 이미지가 화면에 맞도록 비율을 유지하면서 크기 조정 */
+  }
+
+  .dialogue-box {
+    /*bottom: 150px; 
+    /* 채팅창을 화면 아래로 조금 더 가깝게 */
+    padding: 15px;
+    width: 100%;
+  }
+
+  .dialogue-messages {
+    max-height: 200px; /* 대화 기록창 높이 조정 */
+  }
+
+  .message {
+    font-size: 1rem; /* 모바일에서 글자 크기 줄이기 */
+    padding: 10px 15px;
+    max-width: 80%; /* 메시지 폭을 줄여서 화면에 맞게 */
+  }
+
+  .message.bot{
+    font-size: 0.8rem;
+  }
+
+  .dialogue-input {
+    gap: 10px; /* 입력창에서 간격 줄이기 */
+  }
+
+  .dialogue-text-input {
+    padding: 10px 15px; /* 입력창 크기 줄이기 */
+    font-size: 1rem;
+  }
+
+  .dialogue-send-button {
+    padding: 10px 18px;
+    font-size: 0.75rem;
+  }
+}

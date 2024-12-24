@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from "react";
 
+// 시간별 날씨 데이터를 기반으로 한 날씨 조언 컴포넌트
 const DailyWeatherAdvice = ({ hourlyWeather }) => {
   const [advice, setAdvice] = useState({
-    morning: "",
-    afternoon: "",
-    evening: "",
+    morning: "", // 아침 조언
+    afternoon: "", // 점심 조언
+    evening: "", // 저녁 조언
   });
 
   useEffect(() => {
+    // 시간별 날씨 데이터가 없으면 조언을 종료
     if (!hourlyWeather || hourlyWeather.length === 0) return;
 
+    // 각 시간별 날씨 데이터를 기반으로 한 조언 생성
     const generateAdvice = (timeData, timePeriod) => {
       if (!timeData || !timeData.weather || timeData.weather.length === 0) {
         return `오늘 ${timePeriod}의 기상 정보를 확인할 수 없습니다.`;
       }
 
-      const mainWeather = timeData.weather[0]?.main.toLowerCase();
-      const temperature = Math.round(timeData.main.temp - 273.15); // Kelvin to Celsius
+      // 기상 데이터 분석
+      const mainWeather = timeData.weather[0]?.main.toLowerCase(); // 날씨 상태
+      const temperature = Math.round(timeData.main.temp - 273.15); // 화씨를 섭씨로 변환
       const rainChance = timeData.pop > 0.2; // 20% 이상 강수 확률
-      const windSpeed = timeData.wind.speed;
+      const windSpeed = timeData.wind.speed; // 풍속
 
       let adviceText = `오늘 ${timePeriod} 날씨는 `;
 
-      // 날씨 상태 번역
+      // 날씨 상태 설명
       const weatherDescriptions = {
         rain: "비가 내릴 예정입니다",
         snow: "눈이 올 가능성이 있습니다",
@@ -49,7 +53,7 @@ const DailyWeatherAdvice = ({ hourlyWeather }) => {
       }
 
       if (rainChance) {
-        adviceText += "강수 확률이 높으니 외출 시 주의하세요. ";
+        adviceText += "강수 확률이 높으니 외출 시 우산 챙기세요. ";
       }
 
       if (temperature < 0) {
@@ -65,6 +69,7 @@ const DailyWeatherAdvice = ({ hourlyWeather }) => {
       return adviceText.trim();
     };
 
+    // 아침, 점심, 저녁 시간대의 날씨 데이터 추출
     const morningData = hourlyWeather.find((item) =>
       new Date(item.dt_txt).getHours() >= 6 &&
       new Date(item.dt_txt).getHours() < 12
@@ -89,7 +94,7 @@ const DailyWeatherAdvice = ({ hourlyWeather }) => {
         ? generateAdvice(eveningData, "저녁")
         : "저녁 기상 데이터가 없습니다.",
     });
-  }, [hourlyWeather]);
+  }, [hourlyWeather]); // 시간별 날씨 데이터가 변경될 때마다 실행
 
   return (
     <div className="w-full bg-white bg-opacity-90 p-6 rounded-xl shadow-xl mt-6">
@@ -97,15 +102,18 @@ const DailyWeatherAdvice = ({ hourlyWeather }) => {
         오늘의 날씨 조언
       </h2>
       <div className="space-y-4">
-        <div className="bg-blue-100 p-4 rounded-lg shadow-md">
+        {/* 아침 조언 */}
+        <div className="bg-blue-100 p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
           <h3 className="text-xl font-semibold text-blue-600">아침</h3>
           <p className="text-gray-700">{advice.morning}</p>
         </div>
-        <div className="bg-blue-100 p-4 rounded-lg shadow-md">
+        {/* 점심 조언 */}
+        <div className="bg-blue-100 p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
           <h3 className="text-xl font-semibold text-blue-600">점심</h3>
           <p className="text-gray-700">{advice.afternoon}</p>
         </div>
-        <div className="bg-blue-100 p-4 rounded-lg shadow-md">
+        {/* 저녁 조언 */}
+        <div className="bg-blue-100 p-4 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
           <h3 className="text-xl font-semibold text-blue-600">저녁</h3>
           <p className="text-gray-700">{advice.evening}</p>
         </div>

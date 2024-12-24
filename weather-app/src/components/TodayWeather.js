@@ -11,8 +11,8 @@ const TodayWeather = ({ currentWeather }) => {
     return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
-  const sunrise = convertUnixToTime(currentWeather.sys.sunrise);
-  const sunset = convertUnixToTime(currentWeather.sys.sunset);
+  const sunrise = convertUnixToTime(currentWeather.sys.sunrise); // 일출 시간
+  const sunset = convertUnixToTime(currentWeather.sys.sunset); // 일몰 시간
 
   // 날씨 상태 아이콘 URL 생성
   const weatherIcon = `http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`;
